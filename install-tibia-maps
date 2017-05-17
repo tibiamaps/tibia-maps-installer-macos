@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+DEST_DIR="${HOME}/Library/Application Support/CipSoft GmbH/Tibia/packages/Tibia.app/Contents/Resources";
+mkdir -p "${DEST_DIR}";
+if [ "${1}" = '--no-markers' ]; then
+	echo 'Downloading & extracting `minimap-without-markers.zip`…';
+	url='https://tibiamaps.io/downloads/minimap-without-markers';
+else
+	echo 'Downloading & extracting `minimap-with-markers.zip`…';
+	url='https://tibiamaps.io/downloads/minimap-with-markers';
+fi;
+zip_file_name="$(mktemp)";
+curl --progress-bar --location "${url}" > "${zip_file_name}";
+unzip -o -d "${DEST_DIR}" "${zip_file_name}";
+rm "${zip_file_name}";
