@@ -9,7 +9,7 @@ else
 	echo 'Downloading & extracting `minimap-with-markers.zip`…';
 	url='https://tibiamaps.io/downloads/minimap-with-markers';
 fi;
-zip_file_name="$(mktemp)";
+zip_file_name="$(mktemp -t 'minimap-XXXXXX')";
 curl --progress-bar --location "${url}" > "${zip_file_name}";
 unzip -o -d "${DEST_DIR}" "${zip_file_name}";
 rm "${zip_file_name}";
