@@ -10,6 +10,11 @@ Store this script locally and run it again every now and then to update your map
 curl https://raw.githubusercontent.com/tibiamaps/tibia-maps-installer-macos/main/install-tibia-maps > ~/bin/install-tibia-maps; chmod +x ~/bin/install-tibia-maps
 ```
 
+If you get `No such file or directory`, try saving the script on a different folder:
+```sh
+curl https://raw.githubusercontent.com/tibiamaps/tibia-maps-installer-macos/master/install-tibia-maps > your/path/install-tibia-maps; cd your/path; chmod +x install-tibia-maps
+
+```
 ## Usage
 
 By default, `install-tibia-maps` installs the Tibia maps files with markers included:
